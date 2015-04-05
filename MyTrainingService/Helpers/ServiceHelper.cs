@@ -40,7 +40,7 @@ namespace MyTrainingService
             throw new NotImplementedException();
         }
 
-        private List<Training> InitializeTrainings()
+        private void InitializeTrainings()
         {
             _trainings.Add(new Training());
         }
