@@ -12,7 +12,7 @@ namespace MyTrainingService
 
         private ServiceHelper()
         {
-            _trainings = InitializeTrainings();
+           InitializeTrainings();
         }
         
         public static ServiceHelper Instance
@@ -32,7 +32,7 @@ namespace MyTrainingService
 
         public IEnumerable<Training> GetTrainings()
         {
-            throw new NotImplementedException();
+            return _trainings;
         }
 
         public void SaveTraining(Training training)
@@ -42,7 +42,25 @@ namespace MyTrainingService
 
         private void InitializeTrainings()
         {
-            _trainings.Add(new Training());
+            _trainings=new List<Training>();
+            _trainings.Add(new Training
+            {
+                TrainingId = new Guid(),
+                TrainingName = "Name1"
+            });
+            _trainings.Add(new Training
+            {
+                TrainingId = new Guid(),
+                TrainingName = "Name2"
+            }); _trainings.Add(new Training
+            {
+                TrainingId = new Guid(),
+                TrainingName = "Name3"
+            }); _trainings.Add(new Training
+            {
+                TrainingId = new Guid(),
+                TrainingName = "Name4"
+            });
         }
     }
 }
